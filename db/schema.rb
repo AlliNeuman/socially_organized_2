@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_28_202024) do
+ActiveRecord::Schema.define(version: 2018_04_28_213749) do
 
   create_table "calendar_posts", force: :cascade do |t|
     t.date "date"
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2018_04_28_202024) do
     t.text "content"
     t.string "link"
     t.string "image_link"
-    t.boolean "finalized"
+    t.boolean "finalized", default: false
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
