@@ -1,10 +1,12 @@
 class WelcomeController < ApplicationController
 
-  before_action :require_logged_in
+  def index
+    if current_user.nil?
+      render 'index'
+    else
+      redirect_to dashboard_path
+    end
 
-  def home
-    @user = current_user
-    @calendars = current_user.calendars
   end
 
 end

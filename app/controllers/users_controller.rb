@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
 
   def dashboard
-
+    @calendars = current_user.calendars
   end
 
   def new
@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to root_path
+      redirect_to dashboard_path
     else
       redirect_to signup_path
     end
